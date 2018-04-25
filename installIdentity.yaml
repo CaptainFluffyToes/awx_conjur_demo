@@ -1,0 +1,10 @@
+---
+- hosts: chef_servers
+  roles:
+    - role: cyberark.conjur-host-identity
+      conjur_appliance_url: 'https://conjur-master/api'
+      conjur_account: 'cyberark'
+      conjur_host_factory_token: '3d4rgcbq1an3b10rkq471tnn5jt1rfn23y2r56e0try9fen143xhd7'
+      conjur_host_name: "awx_{{inventory_hostname}}"
+      conjur_ssl_certificate: 'conjur-cyberark.pem'
+      conjur_validate_certs: 'false'        
